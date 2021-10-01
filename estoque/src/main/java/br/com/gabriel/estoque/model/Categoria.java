@@ -1,6 +1,8 @@
 package br.com.gabriel.estoque.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -12,6 +14,9 @@ public class Categoria {
     private Long id;
 
     private String nomecategoria;
+    
+    @OneToMany(mappedBy = "categoria")
+    private List<Produto> produtos = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -27,6 +32,14 @@ public class Categoria {
 
     public void setNomecategoria(String nomecategoria) {
         this.nomecategoria = nomecategoria;
+    }
+
+    public List<Produto> getProdutos() {
+        return produtos;
+    }
+
+    public void setProdutos(List<Produto> produtos) {
+        this.produtos = produtos;
     }
 
     @Override

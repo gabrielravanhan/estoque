@@ -16,6 +16,10 @@ public class Produto {
 
     private BigDecimal preco;
 
+    @ManyToOne
+    @JoinColumn(name="id_categoria")
+    private Categoria categoria;
+
     public Long getId() {
         return id;
     }
@@ -38,6 +42,14 @@ public class Produto {
 
     public void setPreco(BigDecimal preco) {
         this.preco = preco;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 
     @Override
