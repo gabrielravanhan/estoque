@@ -1,0 +1,1 @@
+INSERT INTO categoria(nomecategoria) VALUES ('MEDICAMENTOS');
