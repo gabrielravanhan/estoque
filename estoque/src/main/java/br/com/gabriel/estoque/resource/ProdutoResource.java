@@ -16,7 +16,7 @@ public class ProdutoResource {
     @Autowired
     private ProdutoRepository produtoRepository;
 
-    @GetMapping()
+    @GetMapping("/todos")
     public List<Produto> listarTodosProdutos() {
         return produtoRepository.findAll();
     }

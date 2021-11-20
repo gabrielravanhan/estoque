@@ -16,7 +16,7 @@ public class CategoriaResource {
     @Autowired
     private CategoriaRepository categoriaRepository;
 
-    @GetMapping()
+    @GetMapping("/todas")
     public List<Categoria> listarTodasCategorias() {
         return categoriaRepository.findAll();
     }

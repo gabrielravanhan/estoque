@@ -1,5 +1,7 @@
 package br.com.gabriel.estoque.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +16,8 @@ public class Categoria {
     private Long id;
 
     private String nomecategoria;
-    
+
+    @JsonIgnore
     @OneToMany(mappedBy = "categoria")
     private List<Produto> produtos = new ArrayList<>();
 
